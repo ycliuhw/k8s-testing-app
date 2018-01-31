@@ -1,0 +1,8 @@
+[environments]
+  [environments.development]
+    name = "k8s-testing-app"
+    namespace = "k8s-testing-app"
+    wait = false
+    watch = false
+    watch_delay = 2
+    set = ["service.internalPort=3000", "service.externalPort=3000"]
