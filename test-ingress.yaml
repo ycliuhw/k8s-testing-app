@@ -7,7 +7,7 @@ metadata:
   namespace: k8s-testing-app
 spec:
   rules:
-  - host: a2c698709faa011e79b44062cd273c43-384509168.ap-southeast-2.elb.amazonaws.com
+  - host: ing-k-k8s.domainsecurity.cc
     http:
       paths:
       - backend:
