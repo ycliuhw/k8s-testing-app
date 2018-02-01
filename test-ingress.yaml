@@ -13,4 +13,4 @@ spec:
       - backend:
           serviceName: k8s-testing-app-javascript
           servicePort: 3000
-        path: /k8s-testing-app
+        path: /fe-search

@@ -1,9 +1,10 @@
 {
     "main": "index.js",
     "scripts": {
-        "start": "micro"
+        "start": "node ./index.js"
     },
     "dependencies": {
-        "micro": "^9.0.2"
+        "micro": "^9.0.2",
+        "microrouter": "^3.0.0"
     }
 }
