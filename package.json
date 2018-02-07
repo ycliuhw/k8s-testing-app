@@ -5,6 +5,7 @@
     },
     "dependencies": {
         "micro": "^9.0.2",
-        "microrouter": "^3.0.0"
+        "microrouter": "^3.0.0",
+        "prom-client": "^10.2.2"
     }
 }
