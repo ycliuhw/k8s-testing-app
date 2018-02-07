@@ -7,7 +7,7 @@ metadata:
   namespace: k8s-testing-app
 spec:
   rules:
-  - host: ing-k-k8s.domainsecurity.cc
+  - host: nginx.k8s.domainsecurity.cc
     http:
       paths:
       - backend:
