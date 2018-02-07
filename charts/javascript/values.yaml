@@ -18,4 +18,6 @@ resources:
     memory: 128Mi
 ingress:
   enabled: true
-basedomain: ing-k-k8s.uat.ap-southeast-2.domain.com.au
+  host: nginx.k8s.domainsecurity.cc
+  path: /fe-search
+  class: nginx
