@@ -60,6 +60,7 @@ const handlerPong = (req, res) => {
 
 const routers = router(
     get("/fe-search/ping", handlerPong),
+    get("/probe", handlerPong),
 
     // prometheus
     get('/metrics', (req, res) => {
