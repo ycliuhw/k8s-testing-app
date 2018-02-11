@@ -1,0 +1,6 @@
+pipeline:
+  frontend:
+    image: node:8.2.1
+    commands:
+      - npm install
+      - npm test
