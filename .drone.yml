@@ -9,6 +9,7 @@ pipeline:
     image: plugins/docker
     repo: ycliuhw/k8s-testing-app
     secrets: [ docker_username, docker_password ]
-    auto_tag: true
+    # auto_tag: true
+    debug: true
     # auto_tag_suffix: k8s
     dockerfile: Dockerfile
