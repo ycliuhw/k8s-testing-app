@@ -4,3 +4,7 @@ pipeline:
     commands:
       - npm install
       - npm test
+
+  publish:
+    image: plugins/docker
+    repo: ycliuhw/k8s-testing-app
