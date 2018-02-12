@@ -24,3 +24,4 @@ pipeline:
     namespace: k8s-testing-app-drone
     debug: true
     tiller_ns: kube-system
+    secrets: [ api_server, kubernetes_token ]
