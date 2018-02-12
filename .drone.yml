@@ -17,7 +17,7 @@ pipeline:
   helm_deploy:
     image: quay.io/ipedrazas/drone-helm
     skip_tls_verify: true
-    chart: ./charts
+    chart: ./charts/javascript
     release: ${DRONE_BRANCH}
     values: service.internalPort=3000,service.externalPort=3000,ingress.enabled=true,ingress.path=/fe-search-canary
     prefix: STAGING
