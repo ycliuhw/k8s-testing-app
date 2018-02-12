@@ -22,3 +22,5 @@ pipeline:
     values: service.internalPort=3000,service.externalPort=3000,ingress.enabled=true,ingress.path=/fe-search-canary
     prefix: STAGING
     namespace: k8s-testing-app-drone
+    debug: true
+    tiller_ns: kube-system
