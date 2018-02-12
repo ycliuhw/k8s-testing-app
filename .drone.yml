@@ -13,3 +13,12 @@ pipeline:
     debug: true
     # auto_tag_suffix: k8s
     dockerfile: Dockerfile
+
+  helm_deploy:
+    image: quay.io/ipedrazas/drone-helm
+    skip_tls_verify: true
+    chart: ./charts
+    release: ${DRONE_BRANCH}
+    values: service.internalPort=3000,service.externalPort=3000,ingress.enabled=true,ingress.path=/fe-search-canary
+    prefix: STAGING
+    namespace: k8s-testing-app-drone
