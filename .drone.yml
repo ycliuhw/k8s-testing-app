@@ -23,6 +23,6 @@ pipeline:
     values: image.tag=${DRONE_COMMIT_SHA:0:8},service.internalPort=3000,service.externalPort=3000,ingress.enabled=true,ingress.path=/fe-search-canary
     prefix: STAGING
     namespace: k8s-testing-app-drone
-    debug: true
+    # debug: true
     tiller_ns: kube-system
     secrets: [ api_server, kubernetes_token ]
