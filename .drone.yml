@@ -9,9 +9,9 @@ pipeline:
     image: plugins/docker
     repo: ycliuhw/k8s-testing-app
     secrets: [ docker_username, docker_password ]
-    auto_tag: true
+    # auto_tag: true
     debug: true
-    tags: ${DRONE_COMMIT_SHA}
+    tags: ${DRONE_COMMIT_SHA:0:8}
     # auto_tag_suffix: k8s
     dockerfile: Dockerfile
 
@@ -20,7 +20,7 @@ pipeline:
     skip_tls_verify: true
     chart: ./charts/javascript
     release: ${DRONE_BRANCH}
-    values: image.tag=${DRONE_COMMIT_SHA},service.internalPort=3000,service.externalPort=3000,ingress.enabled=true,ingress.path=/fe-search-canary
+    values: image.tag=${DRONE_COMMIT_SHA:0:8},service.internalPort=3000,service.externalPort=3000,ingress.enabled=true,ingress.path=/fe-search-canary
     prefix: STAGING
     namespace: k8s-testing-app-drone
     # debug: true
