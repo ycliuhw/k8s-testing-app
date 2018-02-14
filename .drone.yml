@@ -9,7 +9,7 @@ pipeline:
     image: plugins/docker
     repo: ycliuhw/k8s-testing-app
     secrets: [ docker_username, docker_password ]
-    # auto_tag: true
+    auto_tag: true
     debug: true
     tags: ${DRONE_COMMIT_SHA:0:8}
     # auto_tag_suffix: k8s
