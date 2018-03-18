@@ -10,10 +10,12 @@ pipeline:
     repo: ycliuhw/k8s-testing-app
     secrets: [ docker_username, docker_password ]
     # auto_tag: true
-    # debug: true
+    debug: true
     tags: ${DRONE_COMMIT_SHA:0:8}
     # auto_tag_suffix: k8s
     dockerfile: Dockerfile
+    environment:
+      GLOBAL_CREATOR: $$GLOBAL_CREATOR
 
   helm_deploy:
     image: quay.io/ipedrazas/drone-helm
