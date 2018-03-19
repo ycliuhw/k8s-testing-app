@@ -15,14 +15,14 @@ pipeline:
     # auto_tag_suffix: k8s
     dockerfile: Dockerfile
     environment:
-      GLOBAL_CREATOR: $$GLOBAL_CREATOR
+      - GLOBAL_CREATOR=$$GLOBAL_CREATOR
 
   helm_deploy:
     image: quay.io/ipedrazas/drone-helm
     skip_tls_verify: true
     chart: ./charts/javascript
     release: ${DRONE_BRANCH}
-    values: image.tag=${DRONE_COMMIT_SHA:0:8},service.internalPort=3000,service.externalPort=3000,ingress.enabled=true,ingress.path=/fe-search-canary
+    values: image.tag=${DRONE_COMMIT_SHA:0:8},service.internalPort=$$GLOBAL_PORT,service.externalPort=$$GLOBAL_PORT,ingress.enabled=true,ingress.path=/fe-search-canary
     prefix: GLOBAL
     namespace: k8s-testing-app-drone
     debug: true
@@ -31,3 +31,4 @@ pipeline:
     environment:
       - GLOBAL_CREATOR=$$GLOBAL_CREATOR
       - GLOBAL_ORG=$$GLOBAL_ORG
+      - GLOBAL_PORT=$$GLOBAL_PORT
