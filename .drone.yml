@@ -29,5 +29,5 @@ pipeline:
     tiller_ns: kube-system
     secrets: [ api_server, kubernetes_token ]
     environment:
-      GLOBAL_CREATOR: $GLOBAL_CREATOR
-      GLOBAL_ORG: $GLOBAL_ORG
+      GLOBAL_CREATOR: $$GLOBAL_CREATOR
+      GLOBAL_ORG: $$GLOBAL_ORG
