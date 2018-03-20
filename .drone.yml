@@ -22,7 +22,7 @@ pipeline:
     skip_tls_verify: true
     chart: ./charts/javascript
     release: ${DRONE_BRANCH}
-    values: image.tag=${DRONE_COMMIT_SHA:0:8},service.internalPort=$GLOBAL_PORT,service.externalPort=$GLOBAL_PORT,ingress.enabled=true,ingress.path=/fe-search-canary
+    values: image.tag=${DRONE_COMMIT_SHA:0:8},service.internalPort=${GLOBAL_PORT},service.externalPort=${GLOBAL_PORT},ingress.enabled=true,ingress.path=/fe-search-canary
     # prefix: GLOBAL
     namespace: k8s-testing-app-drone
     debug: true
