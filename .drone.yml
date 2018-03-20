@@ -30,5 +30,5 @@ pipeline:
     secrets: [ api_server, kubernetes_token ]
     environment:
       - GLOBAL_CREATOR=$$GLOBAL_CREATOR
-      - GLOBAL_ORG=$$GLOBAL_ORG
-      - GLOBAL_PORT=$$GLOBAL_PORT
+      - GLOBAL_ORG=$GLOBAL_ORG
+      - GLOBAL_PORT=GLOBAL_PORT
